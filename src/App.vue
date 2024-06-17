@@ -1,16 +1,17 @@
 <script setup>
-import VueChart from 'vue-echarts'
+import {NTabs,NTabPane} from 'naive-ui'
 import {ref} from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 
-const a = ref()
-console.log(a);
-
-const b = ref()
-console.log(b);
+const name = ref('aaaa')
 </script>
 
 <template>
-  <VueChart ref="a"></VueChart>
-  <HelloWorld ref="b" />
+<input v-model="name"></input>
+<NTabs style="width:100vw;height:100vh" placement="left" type="card" closable addable>
+  <NTabPane name="a" tab="a">
+    <template #tab>
+    {{name}}
+    </template>
+  </NTabPane>
+</NTabs>
 </template>
